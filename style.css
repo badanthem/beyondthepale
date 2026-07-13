@@ -1,0 +1,328 @@
+/* =====================================================
+   BEYONDTHEPALE — CEEFAX / TELETEXT THEME
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =====================================================
+   BASE
+===================================================== */
+
+html {
+  font-size: 22px;
+}
+
+body {
+  background: #000000;
+  color: #FFFFFF;
+  font-family: 'VT323', 'Courier New', monospace;
+  line-height: 1.35;
+  padding: 0;
+}
+
+/* CRT scanline overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.07) 0px,
+    rgba(0, 0, 0, 0.07) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
+/* =====================================================
+   SITE HEADER
+   Top info strip + two-tone title bar
+===================================================== */
+
+.site-header {
+  width: 100%;
+  padding: 0;
+}
+
+/* Top info strip — page number left, service name centre, clock right */
+.ceefax-info {
+  background: #000000;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid #222;
+}
+
+.ceefax-info .page-num {
+  color: #FFFFFF;
+}
+
+.ceefax-info .service-name {
+  color: #FFFFFF;
+}
+
+.ceefax-info .page-time {
+  color: #FFFFFF;
+}
+
+/* Two-tone nav bar */
+.site-nav {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Left black zone — site name */
+.site-name {
+  background: #000000;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 1rem;
+  border: 2px solid #FFFFFF;
+  margin: 0.3rem;
+}
+
+.site-name:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+/* Right blue zone — fills remaining width */
+.site-nav-links {
+  background: #0000BB;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.site-nav-links a {
+  color: #00FFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+}
+
+.site-nav-links a:hover {
+  color: #FFFF00;
+}
+
+
+/* =====================================================
+   POSTS LIST
+===================================================== */
+
+.posts-list {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-top: 2px solid #0000BB;
+  border-bottom: 2px solid #0000BB;
+}
+
+.posts-list h2 {
+  color: #00FFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+.posts-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.posts-list li {
+  margin-bottom: 0.2rem;
+}
+
+.posts-list li::before {
+  content: '>>> ';
+  color: #00FFFF;
+}
+
+.posts-list a {
+  color: #00FF00;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.posts-list a:hover {
+  color: #FFFF00;
+}
+
+.posts-list .post-date {
+  color: #FFFFFF;
+}
+
+
+/* =====================================================
+   ARTICLE
+===================================================== */
+
+article {
+  width: 100%;
+  padding: 0 1rem 4rem;
+}
+
+.post-meta {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  color: #00FFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+h1 {
+  color: #FFFF00;
+  font-size: 2rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.standfirst {
+  color: #00FFFF;
+  margin-bottom: 1rem;
+}
+
+.header-rule {
+  border: none;
+  border-top: 2px solid #0000BB;
+  margin-bottom: 1rem;
+}
+
+
+/* =====================================================
+   POST BODY
+===================================================== */
+
+.post-body p {
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+}
+
+.post-body h2 {
+  color: #FFFF00;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.post-body h3 {
+  color: #00FFFF;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.post-body a {
+  color: #00FF00;
+  text-decoration: none;
+}
+
+.post-body a:hover {
+  color: #FFFF00;
+}
+
+.post-body blockquote {
+  border-left: 4px solid #FFFF00;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #00FFFF;
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-body li {
+  margin-bottom: 0.15rem;
+}
+
+.post-body li::marker {
+  color: #00FFFF;
+}
+
+.post-body strong {
+  color: #FFFF00;
+}
+
+
+/* =====================================================
+   FOOTER — fastext navigation bar
+===================================================== */
+
+.post-footer {
+  width: 100%;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: stretch;
+}
+
+.back-link {
+  background: #FF0000;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.3rem 1.5rem;
+  letter-spacing: 0.05em;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+}
+
+.back-link:hover {
+  background: #FFFF00;
+  color: #000000;
+}
+
+.post-footer span {
+  background: #000000;
+  color: #00FFFF;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  margin-left: auto;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+}
+
+
+/* =====================================================
+   YOUR ADDITIONS
+===================================================== */
